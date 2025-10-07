@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/stellabelessimovies-react/static/css/main.7c26b1da.css",
+    "main.js": "/stellabelessimovies-react/static/js/main.cd39ed55.js",
+    "static/js/453.6bd4f4d0.chunk.js": "/stellabelessimovies-react/static/js/453.6bd4f4d0.chunk.js",
+    "static/media/sonicfun.jpg": "/stellabelessimovies-react/static/media/sonicfun.d2356be207be4721bae9.jpg",
+    "static/media/stella.jpg": "/stellabelessimovies-react/static/media/stella.20296671495c1bd04ca8.jpg",
+    "static/media/bootstrap-icons.woff?": "/stellabelessimovies-react/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/stellabelessimovies-react/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "index.html": "/stellabelessimovies-react/index.html",
+    "main.7c26b1da.css.map": "/stellabelessimovies-react/static/css/main.7c26b1da.css.map",
+    "main.cd39ed55.js.map": "/stellabelessimovies-react/static/js/main.cd39ed55.js.map",
+    "453.6bd4f4d0.chunk.js.map": "/stellabelessimovies-react/static/js/453.6bd4f4d0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7c26b1da.css",
+    "static/js/main.cd39ed55.js"
+  ]
+}
