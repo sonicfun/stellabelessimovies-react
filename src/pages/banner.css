@@ -1,0 +1,221 @@
+ /* This is the banner css which contains all the necessary scripts for the Banner Page */
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: url(/src/MyCursor.png) , auto;  /* This is my own custom cursor I made in Adobe Illustrator */
+}
+
+.banner::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.banner .movie {
+    padding: 200px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+
+.bgImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    font-size: 8rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+}
+
+.bgImg.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.banner .trailer {
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    z-index: 1000;
+}
+
+.banner .trailer.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+
+}
+
+.trailer p{
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-left: 20px;
+    margin-bottom: -288px;
+    cursor: url(/src/line.png), pointer; /* This is my own custom line I made in Adobe Illustrator */
+}
+
+/* ------------------- */
+/* Small Desktops      */
+/* ------------------- */
+@media screen and (max-width: 1037px) {
+  .banner {
+    padding: 0 40px;
+    min-height: 100vh;
+  }
+
+  .banner .movie {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 40px;
+    text-align: center;
+  }
+
+  .bgImg {
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .trailer p{
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-left: 23px;
+    margin-bottom: 37px;
+    cursor: url(/src/line.png), pointer; /* This is my own custom line I made in Adobe Illustrator */
+}
+
+.banner .trailer {
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    z-index: 1000;
+}
+
+.banner .trailer.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+
+}
+
+}
+
+/* ------------------- */
+/* Tablets             */
+/* ------------------- */
+@media screen and (max-width: 768px) {
+ .banner {
+    padding: 0 20px;
+    min-height: 100vh;
+  }
+
+  .banner .movie {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  /* Only MovieContent gets padding */
+  .banner .movie .col-lg-6:first-child {
+    padding: 10px 0;
+  }
+
+  /* PlayBtn column stays clean and centered */
+  .banner .movie .col-lg-6:last-child {
+    padding: 0;
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+  }
+
+  .bgImg {
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+/* ------------------- */
+/* Phones              */
+/* ------------------- */
+@media screen and (max-width: 430px) {
+  .banner {
+    padding: 0 22px;
+    min-height: 100vh;
+  }
+
+  .banner .movie {
+    padding: 80px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trailer p {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-top: -15px;  /* not too aggressive so no overlap */
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+
+  .bgImg {
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+/* ------------------- */
+/* Very Small Phones   */
+/* (iPhone SE, 375px)  */
+/* ------------------- */
+@media screen and (max-width: 375px) {
+  .banner {
+    padding: 0 13px;
+    min-height: 100vh;
+  }
+
+  .banner .movie {
+    padding: 60px 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trailer p {
+    color: var(--primary);
+    font-size: 1.1rem;   /* smaller text fits properly */
+    margin-top: -64px;  /* prevent hidden/black areas */
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+
+  .bgImg {
+    object-fit: cover;
+    object-position: top center;
+  }
+}

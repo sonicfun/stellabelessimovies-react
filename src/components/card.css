@@ -1,0 +1,178 @@
+/* ----------------- MOVIE CARD ----------------- */
+section .movie-card {
+    position: relative;
+    border: none;
+    border-radius: 0;
+    background: #0000 !important;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    cursor: url(/src/MyCursor.png), auto; /* Custom cursor */
+    overflow: hidden;
+}
+
+/* Hover overlay */
+section .movie-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 1; /* under content */
+}
+
+/* Movie card text */
+section .movie-card p {
+    color: #dddd;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Content (title + icon) */
+section .movie-card .content {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 2; /* above overlay */
+}
+
+/* Content title */
+section .movie-card .content h4 {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Title underline */
+section .movie-card .content h4::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -10px;
+    height: 5px;
+    width: 80%;
+    background: linear-gradient(90deg, var(--primary), var(--primary), transparent);
+    z-index: 1000;
+}
+
+/* Icon styling */
+section .movie-card .content ion-icon {
+    font-size: 2.5rem;
+    transition: 0.3s;
+    cursor: url(/src/handpointing.png), auto;
+}
+
+section .movie-card .content ion-icon:hover {
+    color: var(--primary);
+}
+
+/* Hover effect: show overlay + content */
+section .movie-card:hover::before,
+section .movie-card:hover .content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ----------------- RESPONSIVE ----------------- */
+
+/* Small Desktops (≤1024px) */
+@media screen and (max-width: 1024px) {
+    section .movie-card {
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+    }
+    section .movie-card p {
+        font-size: 1.1rem;
+    }
+    section .movie-card .content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+}
+
+/* Tablets (≤768px) */
+@media screen and (max-width: 768px) {
+    section .movie-card {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    section .movie-card p {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+    section .movie-card .content h4 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    section .movie-card .content ion-icon {
+        font-size: 2rem;
+    }
+  
+/* Enable preview on touch (simulates hover) */
+.movie-card.touch-active::before,
+.movie-card.touch-active .content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+}
+
+/* Phones (≤430px) */
+@media screen and (max-width: 430px) {
+    section .movie-card {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+    }
+    section .movie-card p {
+        font-size: 0.9rem;
+    }
+    section .movie-card .content h4 {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+    section .movie-card .content ion-icon {
+        font-size: 1.8rem;
+    }
+ 
+/* Enable preview on touch (simulates hover) */
+.movie-card.touch-active::before,
+.movie-card.touch-active .content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+}
+
+/* Small Phones (≤375px) */
+@media screen and (max-width: 375px) {
+    section .movie-card {
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+    }
+    section .movie-card p {
+        font-size: 0.8rem;
+        padding: 6px 0;
+    }
+    section .movie-card .content h4 {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    section .movie-card .content ion-icon {
+        font-size: 1.6rem;
+    }
+
+/* Enable preview on touch (simulates hover) */
+.movie-card.touch-active::before,
+.movie-card.touch-active .content {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+}

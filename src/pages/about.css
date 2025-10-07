@@ -1,0 +1,378 @@
+/* ----------------- ABOUT SECTION ----------------- */
+.about .filters {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+    margin-top: 50px;
+    justify-content: center; /* Keep filters centered on all devices */
+}
+
+.about .filters li {
+    color: #fff;
+    padding: 10px 25px;
+    background: #191919;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer; 
+}
+
+.about .filters li:hover,
+.about .filters li.active {
+    background: var(--primary);
+}
+
+.stella-item {
+    background: #fff;
+    text-align: center;
+    margin: 20px 0;
+    padding: 50px 20px 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 46px rgba(255, 255, 255, 0.5); 
+    transition: all 0.25s ease-in-out;
+    cursor: url(/src/MyCursor.png), auto; /* Custom cursor */
+}
+
+.stella-item:hover {
+    background: #3956de;
+    color: rgb(241, 215, 215);
+}
+
+.stella-item h3 {
+    margin: 20px 0 1px 0 !important;
+    color: #454545;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.25s ease-in-out;
+    cursor: url(/src/line.png), pointer;
+}
+
+.stella-info {
+    display: block;
+    margin-bottom: 0;
+}
+
+.stella-info p,
+.stella-description p {
+    color: #3f3b3b;
+    font-style: italic;
+}
+
+.stella-description p {
+    cursor: url(/src/line.png), pointer;
+}
+
+.stella-info::after {
+    background: linear-gradient(135deg, #6B02FF 0%, #985BEF 100%);
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 50px;
+    height: 3px;
+    margin-top: -20px;
+}
+
+.stella-pic {
+    max-width: 140px;
+    padding: 6px;
+    background-color: #dedede;
+    border-radius: 50%;
+    display: block;       /* makes it a block element */
+    margin: 0 auto;       /* centers it horizontally */
+} 
+
+ul.stella-icon {
+    margin-top: 25px;
+    margin-left: -50px;
+    text-align: center;
+}
+
+ul.stella-icon li {
+    display: inline-block;
+    margin: 0 3px;
+    transition: all 0.25s ease-in-out;
+}
+
+ul.stella-icon li a {
+    display: inline-block;
+    padding: 8px;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+    line-height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #fff;
+}
+
+ul.stella-icon li a.facebook {
+    background-color: #4099ff;
+}
+
+ul.stella-icon li a.youtube {
+    background-color: #c50b0b;
+}
+
+.stella-icon li a:hover {
+    color: #dedede;
+    transition: all 0.25s ease-in-out;
+}
+
+
+@media screen and (min-width: 769px) {
+  /* Filters more desktop-like */
+  .about .filters {
+    gap: 15px;
+    margin-top: 40px;
+    justify-content: center;
+  }
+
+  .about .filters li {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Stella item closer to desktop but fluid */
+  .stella-item {
+    margin: 20px auto;
+    padding: 40px 15px 30px 15px;
+    max-width: 420px;   /* keep it roomy but not full width */
+  }
+
+  .stella-item h3 {
+    font-size: 18px;
+  }
+
+  .stella-pic {
+    max-width: 130px;
+  }
+
+  .stella-info::after {
+    width: 60px; /* slightly wider line under name */
+  }
+
+  /* Icons balanced */
+  ul.stella-icon {
+    margin-top: 25px;
+    margin-left: -37px;
+    text-align: center;
+  }
+
+  ul.stella-icon li a {
+    width: 22px;
+    height: 22px;
+    font-size: 18px;
+    padding: 6px;
+  }
+}
+
+
+/* Small Desktops & Laptops (≤1037px) */
+@media screen and (max-width: 1037px) {
+    .stella-item {
+        margin: 15px auto;          /* similar to 414px */
+        padding: 30px 10px 20px 10px; /* adapted from mobile style */
+        max-width: 380px;           /* scaled for desktops */
+    }
+
+    .stella-item h3 {
+        font-size: 16px;            /* same as 414px */
+    }
+
+    .about .filters li {
+        padding: 6px 12px;          /* same as 414px */
+        font-size: 0.8rem;
+    }
+    ul.stella-icon {
+    margin-top: 25px;
+    margin-left: -31px;
+    text-align: center;
+}
+
+    ul.stella-icon li a {
+        width: 20px;
+        height: 20px;
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+
+@media screen and (max-width: 912px) {
+    .stella-item {
+        margin: 15px -49px 33px;
+        padding: 30px 10px 20px 10px;
+        max-width: 320px;           /* slightly smaller for tablets */
+    }
+
+    .stella-item h3 {
+        font-size: 16px;
+    }
+
+    .about .filters li {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    ul.stella-icon {
+    margin-top: 25px;
+    margin-left: -31px;
+    text-align: center;
+}
+
+    ul.stella-icon li a {
+        width: 18px;
+        height: 18px;
+        font-size: 16px;
+        padding: 6px;
+    }
+}
+
+
+/* Tablets (≤768px) */
+@media screen and (max-width: 853px) and (max-width: 853px) and (min-height: 1280px) and (max-height: 1280px) {
+    .stella-item {
+        margin: 15px auto;
+        padding: 30px 10px 20px 10px;
+        max-width: 320px;           /* slightly smaller for tablets */
+    }
+
+    .stella-item h3 {
+        font-size: 16px;
+    }
+
+    .about .filters li {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    ul.stella-icon {
+    margin-top: 25px;
+    margin-left: -31px;
+    text-align: center;
+}
+
+    ul.stella-icon li a {
+        width: 18px;
+        height: 18px;
+        font-size: 16px;
+        padding: 6px;
+    }
+}
+
+
+
+/* Tablets (≤768px) */
+@media screen and (max-width: 768px) {
+    .stella-item {
+        margin: 15px auto;
+        padding: 30px 10px 20px 10px;
+        max-width: 320px;           /* slightly smaller for tablets */
+    }
+
+    .stella-item h3 {
+        font-size: 16px;
+    }
+
+    .about .filters li {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    ul.stella-icon {
+    margin-top: 25px;
+    margin-left: -31px;
+    text-align: center;
+}
+
+    ul.stella-icon li a {
+        width: 18px;
+        height: 18px;
+        font-size: 16px;
+        padding: 6px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 768px) and (min-height: 1024px) and (max-height: 1024px) {
+ .stella-item {
+        margin: 15px -49px 33px;
+        padding: 30px 10px 20px 10px;
+        max-width: 320px;           /* slightly smaller for tablets */
+    }
+
+    .stella-item h3 {
+        font-size: 16px;
+    }
+
+    .about .filters li {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    ul.stella-icon {
+    margin-top: 25px;
+    margin-left: -31px;
+    text-align: center;
+}
+
+    ul.stella-icon li a {
+        width: 18px;
+        height: 18px;
+        font-size: 16px;
+        padding: 6px;
+    }
+
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 414px) {
+    .stella-item {
+        margin: 15px auto;
+        padding: 30px 10px 20px 10px;
+        max-width: 300px;
+    }
+
+    .stella-item h3 {
+        font-size: 16px;
+    }
+
+    .about .filters li {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    ul.stella-icon {
+    margin-top: 25px;
+    margin-left: -31px;
+    text-align: center;
+}
+}
+
+/* Small Phones (≤375px, e.g. iPhone SE) */
+@media screen and (max-width: 375px) {
+    .stella-item {
+        margin: 12px auto;
+        padding: 25px 8px 18px 8px;
+        max-width: 280px;
+    }
+
+    .stella-item h3 {
+        font-size: 15px;
+    }
+
+    .about .filters li {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    ul.stella-icon {
+    margin-top: 25px;
+    text-align: center;
+}
+
+    ul.stella-icon li a {
+        padding: 6px;
+        font-size: 16px;
+    }
+}

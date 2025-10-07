@@ -1,0 +1,271 @@
+/* ----------------- GLOBAL RESET & BASE STYLES ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Prevent any element from causing horizontal overflow */
+div, section, main, header, footer, nav, article, aside {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Images and media responsive by default */
+img, video, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent long words from breaking layout */
+p, h1, h2, h3, h4, h5, h6, span, div {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Code styling */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Pre-formatted text handling */
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: pre-wrap;
+}
+
+/* Table responsiveness */
+table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Form elements */
+input, textarea, select, button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Container utility classes */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: 100vw;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Row and column fixes for grid systems */
+.row {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+[class*="col-"] {
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* App container (for React apps) */
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ----------------- MOBILE SPECIFIC FIXES ----------------- */
+
+/* Prevent zoom on input focus (iOS) */
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+/* Smooth scaling for all images and interactive elements */
+img, button, a {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform, box-shadow;
+}
+
+/* Scale-up effect on hover for desktop */
+@media (hover: hover) and (pointer: fine) {
+  img:hover, button:hover, a:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Active/tap feedback for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  img:active, button:active, a:active {
+    transform: scale(0.97);
+    transition: transform 0.15s ease;
+  }
+}
+
+/* Slight glow/shadow on interactive elements (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  img:hover, button:hover, a:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch device styles */
+  button, a, input, select, textarea {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .container-fluid {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .container-fluid {
+    padding: 0 8px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 0 5px;
+  }
+  
+  .container-fluid {
+    padding: 0 5px;
+  }
+}
+
+/* Utility classes for overflow control */
+.no-overflow {
+  overflow: hidden;
+}
+
+.no-overflow-x {
+  overflow-x: hidden;
+}
+
+.full-width {
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Fix for common layout issues */
+.section, .page, .content {
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling for all browsers */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

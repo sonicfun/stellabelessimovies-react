@@ -1,0 +1,76 @@
+/* This is the movie poster filter */
+.movieposter .filters {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+    margin-top: 50px;
+    cursor: url(/src/handpointing.png), pointer; /* This is my own custom hand I made in Adobe Illustrator */
+}
+
+
+/* This is the movie poster filter  with the li*/
+.movieposter .filters li {
+    color: #ffff;
+    padding: 10px 25px;
+    background: #191919;
+    transition: 0.3s;
+    text-transform: uppercase;
+    cursor: pointer;
+    cursor: url(/src/handpointing.png), pointer; /* This is my own custom hand I made in Adobe Illustrator */
+}
+
+
+
+/* This is the movie poster filter  with the with effect of the buttons*/
+.movieposter .filters li:hover,
+.movieposter .filters li.active {
+    background: var(--primary);
+    cursor: url(/src/handpointing.png), pointer; /* This is my own custom hand I made in Adobe Illustrator */
+}
+
+/* ----------------- MEDIA QUERIES ----------------- */
+
+/* Tablets */
+@media screen and (max-width: 1037px) {
+    .movieposter .filters {
+        gap: 8px;
+        margin-top: 40px;
+    }
+
+    .movieposter .filters li {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Tablets / Large Phones */
+@media screen and (max-width: 768px) {
+    .movieposter .filters {
+        gap: 6px;
+        margin-top: 35px;
+        justify-content: center; /* Center the filters on smaller screens */
+    }
+
+    .movieposter .filters li {
+        padding: 6px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 414px) {
+    .movieposter .filters {
+        gap: 5px;
+        margin-top: 30px;
+        flex-direction: column; /* Stack filters vertically for very small screens */
+        align-items: center;
+    }
+
+    .movieposter .filters li {
+        padding: 5px 14px;
+        font-size: 0.8rem;
+        width: 90%; /* make buttons stretch almost full width */
+        text-align: center;
+    }
+}

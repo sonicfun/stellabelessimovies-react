@@ -1,0 +1,188 @@
+
+.banner .playBtn {
+    position: relative;
+    color: #ffff;
+    width: 80px;
+    height: 80px;
+    top: 143px;   
+    transition: 1s;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer !important;
+    cursor: url(/src/handpointing.png), pointer; /* This is my own custom hand I made in Adobe Illustrator */
+
+}
+
+
+.banner .playBtn ion-icon {
+    font-size: 4rem;
+    color: var(--primary);
+    cursor: pointer;
+    cursor: url(/src/handpointing.png), pointer; /* This is my own custom hand I made in Adobe Illustrator */
+}
+
+
+.banner .playBtn::before{
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    right: -5px;
+    bottom: -5px;
+    content: '';
+    background: transparent;
+    border: 10px solid #ffff;
+    border-radius: 50%;
+    animation: button 1s linear infinite;
+    cursor: url(/src/handpointing.png), pointer; /* This is my own custom hand I made in Adobe Illustrator */
+}
+
+
+/* This is the animation of the playbutton effect */
+@keyframes button {
+    0%,
+    100% {
+        opacity: 0.3;
+        filter: blur(4px);
+    }
+    50% {
+        opacity: 1;
+        filter: blur(10px);
+    }
+}
+/* ------------------- */
+/* Small Desktops      */
+/* ------------------- */
+@media screen and (max-width: 1037px) {
+  .banner .playBtn {
+    width: 70px;
+    height: 70px;
+    top:4px;                     /* centered vertically */
+    left: 5%;                    /* centered horizontally */
+    transform: translate(-50%, -50%);
+  }
+
+  .banner .playBtn ion-icon {
+    font-size: 3.5rem;
+  }
+
+  .banner .playBtn::before {
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-width: 8px;
+  }
+}
+
+/* ------------------- */
+/* Tablets             */
+/* ------------------- */
+@media screen and (max-width: 768px) {
+  .banner .playBtn {
+    width: 60px;
+    height: 60px;
+    top: 13px;                     /* slightly higher */
+    right: -6px;                  /* move to right side */
+    left: auto;
+    transform: translateY(-50%);  /* only vertical centering */
+  }
+
+  .banner .playBtn ion-icon {
+    font-size: 3rem;
+  }
+
+  .banner .playBtn::before {
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-width: 6px;
+  }
+}
+
+
+@media screen and (max-height: 667px) {
+  .banner .playBtn {
+    width: 40px;
+    height: 40px;
+    top: 35%;                     /* slightly higher */
+    right: 10px;
+    left: auto;
+    transform: translateY(-50%);
+  }
+
+  .banner .playBtn ion-icon {
+    font-size: 2rem;
+  }
+
+  .banner .playBtn::before {
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-width: 4px;
+  }
+}
+
+/* ------------------- */
+/* Phones              */
+/* ------------------- */
+@media screen and (max-width: 430px) {
+  .banner .playBtn {
+    width: 50px;
+    height: 50px;
+    top: 12px;
+    left: 8%;
+    right: auto;
+    transform: translate(-50%, -50%); /* perfect centering */
+  }
+
+  .banner .playBtn ion-icon {
+    font-size: 2.5rem;
+  }
+
+  .banner .playBtn::before {
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-width: 5px;
+  }
+}
+
+/* ------------------- */
+/* Very Small Phones   */
+/* iPhone SE etc.      */
+/* ------------------- */
+
+
+
+
+@media screen and (max-width: 375px)  {
+  .banner .playBtn {
+    width: 40px;
+    height: 40px;
+    top: -14px;                    /* slightly higher */
+    right: 10px;
+    left: auto;
+    transform: translateY(-50%);
+  }
+
+  .banner .playBtn ion-icon {
+    font-size: 2rem;
+  }
+
+  .banner .playBtn::before {
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-width: 4px;
+  }
+}
+
