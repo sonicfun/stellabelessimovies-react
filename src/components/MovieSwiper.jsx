@@ -22,7 +22,6 @@ function MovieSwiper({ slides, slideChange, isModalOpen }) {
       if (isModalOpen) {
         swiper.autoplay.stop();
       } else {
-        // Small delay to ensure modal is fully closed before resuming
         setTimeout(() => {
           if (swiper.autoplay && !swiper.destroyed) {
             swiper.autoplay.start();
@@ -63,7 +62,7 @@ function MovieSwiper({ slides, slideChange, isModalOpen }) {
             onClick={() => slideChange(slide._id)}
           >
             <img
-              src={slide.previewImg}
+              src={process.env.PUBLIC_URL + slide.previewImg}
               alt={slide.title || 'Preview'}
               draggable={false}
               onLoad={() => handleImageLoad(slide._id)}

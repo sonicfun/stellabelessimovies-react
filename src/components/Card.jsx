@@ -5,7 +5,6 @@ function Card({ movie }) {
   const [active, setActive] = useState(false);
   const cardRef = useRef(null);
 
-  // Close preview if you tap outside the card
   useEffect(() => {
     const handleOutside = (e) => {
       if (cardRef.current && !cardRef.current.contains(e.target)) {
@@ -21,16 +20,14 @@ function Card({ movie }) {
       <div
         ref={cardRef}
         className={`movie-card ${active ? "touch-active" : ""}`}
-        onClick={() => setActive(!active)} // toggle preview on tap
+        onClick={() => setActive(!active)}
       >
         <img
-          src={movie.previewImg}
-          alt="Preview"
+          src={process.env.PUBLIC_URL + movie.previewImg}
+          alt={movie.title}
           className="img-fluid"
         />
-        <p>
-          {movie.length} | {movie.category}
-        </p>
+        <p>{movie.length} | {movie.category}</p>
         <div className="content">
           <h4>{movie.title}</h4>
         </div>
@@ -40,4 +37,3 @@ function Card({ movie }) {
 }
 
 export default Card;
-
