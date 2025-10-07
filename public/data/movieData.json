@@ -71,9 +71,9 @@
   },
   {
     "_id": 6,
-    "titleImg": "/images/movies/games-in-edem-title.png",
-    "bgImg": "/images/movies/games-in-edem-preview.png",
-    "previewImg": "/images/movies/games-in-edem.png",
+    "titleImg": "/images/movies/edem-games-title.png",
+    "bgImg": "/images/movies/edem-games-preview.png",
+    "previewImg": "/images/movies/edem-games-poster.png",
     "video": "https://www.dailymotion.com/embed/video/x8vv30e?autoplay=1",
     "title": "EDEN GAMES",
     "year": "2002",
